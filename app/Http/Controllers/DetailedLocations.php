@@ -43,48 +43,64 @@ class DetailedLocations extends Controller
     }
 
     public function nearby_properties(Request $request)
-    {
-        $validated = $request->validate([
-            'latitude' => 'required|numeric|between:-90,90',
-            'longitude' => 'required|numeric|between:-180,180',
-            'max_distance' => 'nullable|numeric|min:1|max:1000',
-        ]);
+{
+    $validated = $request->validate([
+        'latitude' => 'required|numeric|between:-90,90',
+        'longitude' => 'required|numeric|between:-180,180',
+        'max_distance' => 'nullable|numeric|min:1|max:1000',
+    ]);
 
-        $maxDistance = (float) ($validated['max_distance'] ?? 1000);
-        $properties = Property::approved()
-            ->withFavoriteState($request->user()->id)
-            ->with('detailed_locations')
-            ->get();
-        $coordinates = collect();
+    $maxDistance = (float) ($validated['max_distance'] ?? 1000);
 
-        foreach ($properties as $property) {
-            if (! $property->detailed_locations) {
-                continue;
-            }
+    $properties = Property::approved()
+        ->withFavoriteState($request->user()->id)
+        ->with('detailed_locations')
+        ->get();
 
-            $distance = Distance::distance(
-                $validated['latitude'],
-                $validated['longitude'],
-                $property->detailed_locations->latitude,
-                $property->detailed_locations->longitude
-            );
+    $coordinates = collect();
 
-            if ($distance <= $maxDistance) {
-                $coordinates->push([
-                    'id' => $property->id,
-                    'latitude' => $property->detailed_locations->latitude,
-                    'longitude' => $property->detailed_locations->longitude,
-                    'distance' => $distance,
-                    'is_favorite' => (bool) $property->is_favorite,
-                ]);
-            }
+    foreach ($properties as $property) {
+        if (! $property->detailed_locations) {
+            continue;
         }
 
-        return response()->json([
-            'message' => 'تم جلب العقارات القريبة المعتمدة.',
-            'data' => $coordinates->sortBy('distance')->values(),
-        ]);
+        $distance = Distance::distance(
+            $validated['latitude'],
+            $validated['longitude'],
+            $property->detailed_locations->latitude,
+            $property->detailed_locations->longitude
+        );
+
+        if ($distance <= $maxDistance) {
+            $coordinates->push([
+                'id' => $property->id,
+
+                // معلومات العقار
+                'type' => $property->type,
+                'location' => $property->location,
+                'price' => $property->price,
+                'area' => $property->area,
+                'status' => $property->status,
+
+                // إحداثيات الموقع التفصيلي
+                'latitude' => $property->detailed_locations->latitude,
+                'longitude' => $property->detailed_locations->longitude,
+
+                // المسافة عن النقطة التي حددها المستخدم
+                'distance' => round($distance, 2),
+
+                'is_favorite' => (bool) $property->is_favorite,
+            ]);
+        }
     }
+
+    return response()->json([
+        'message' => 'تم جلب العقارات القريبة المعتمدة.',
+        'data' => $coordinates
+            ->sortBy('distance')
+            ->values(),
+    ]);
+}
 
     private function ensureCanManage(Property $property, Request $request): void
     {
