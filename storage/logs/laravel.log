@@ -1,0 +1,679 @@
+[2026-07-17 11:41:18] local.ERROR: Class "DOMDocument" not found {"exception":"[object] (Error(code: 0): Class \"DOMDocument\" not found at /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/HtmlRenderer.php:32)
+[stacktrace]
+#0 /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/HtmlRenderer.php(24): Termwind\\HtmlRenderer->parse()
+#1 /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/Functions.php(41): Termwind\\HtmlRenderer->render()
+#2 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Component.php(52): Termwind\\render()
+#3 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Line.php(54): Illuminate\\Console\\View\\Components\\Component->renderView()
+#4 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Info.php(18): Illuminate\\Console\\View\\Components\\Line->render()
+#5 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Factory.php(60): Illuminate\\Console\\View\\Components\\Info->render()
+#6 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php(35): Illuminate\\Console\\View\\Components\\Factory->__call()
+#7 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\OptimizeClearCommand->handle()
+#8 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#9 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure()
+#10 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#11 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate\\Container\\BoundMethod::call()
+#12 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
+#13 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Command/Command.php(318): Illuminate\\Console\\Command->execute()
+#14 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
+#15 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(1073): Illuminate\\Console\\Command->run()
+#16 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+#17 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+#18 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+#19 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
+#20 /mnt/data/final_work/property_finder_final/artisan(13): Illuminate\\Foundation\\Application->handleCommand()
+#21 {main}
+"} 
+[2026-07-17 11:41:19] local.ERROR: Class "DOMDocument" not found {"exception":"[object] (Error(code: 0): Class \"DOMDocument\" not found at /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/HtmlRenderer.php:32)
+[stacktrace]
+#0 /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/HtmlRenderer.php(24): Termwind\\HtmlRenderer->parse()
+#1 /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/Functions.php(41): Termwind\\HtmlRenderer->render()
+#2 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Component.php(52): Termwind\\render()
+#3 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Line.php(54): Illuminate\\Console\\View\\Components\\Component->renderView()
+#4 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Info.php(18): Illuminate\\Console\\View\\Components\\Line->render()
+#5 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Factory.php(60): Illuminate\\Console\\View\\Components\\Info->render()
+#6 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php(70): Illuminate\\Console\\View\\Components\\Factory->__call()
+#7 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\ViewClearCommand->handle()
+#8 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#9 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure()
+#10 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#11 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate\\Container\\BoundMethod::call()
+#12 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
+#13 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Command/Command.php(318): Illuminate\\Console\\Command->execute()
+#14 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
+#15 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(68): Illuminate\\Console\\Command->run()
+#16 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(41): Illuminate\\Console\\Command->runCommand()
+#17 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php(36): Illuminate\\Console\\Command->callSilent()
+#18 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\ViewCacheCommand->handle()
+#19 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#20 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure()
+#21 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#22 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate\\Container\\BoundMethod::call()
+#23 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
+#24 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Command/Command.php(318): Illuminate\\Console\\Command->execute()
+#25 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
+#26 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(1073): Illuminate\\Console\\Command->run()
+#27 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+#28 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+#29 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+#30 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
+#31 /mnt/data/final_work/property_finder_final/artisan(13): Illuminate\\Foundation\\Application->handleCommand()
+#32 {main}
+"} 
+[2026-07-17 11:48:40] local.ERROR: Class "DOMDocument" not found {"exception":"[object] (Error(code: 0): Class \"DOMDocument\" not found at /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/HtmlRenderer.php:32)
+[stacktrace]
+#0 /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/HtmlRenderer.php(24): Termwind\\HtmlRenderer->parse()
+#1 /mnt/data/final_work/property_finder_final/vendor/nunomaduro/termwind/src/Functions.php(41): Termwind\\HtmlRenderer->render()
+#2 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Component.php(52): Termwind\\render()
+#3 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Line.php(54): Illuminate\\Console\\View\\Components\\Component->renderView()
+#4 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Info.php(18): Illuminate\\Console\\View\\Components\\Line->render()
+#5 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/View/Components/Factory.php(60): Illuminate\\Console\\View\\Components\\Info->render()
+#6 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php(310): Illuminate\\Console\\View\\Components\\Factory->__call()
+#7 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php(261): Illuminate\\Foundation\\Console\\ServeCommand->{closure:Illuminate\\Foundation\\Console\\ServeCommand::flushOutputBuffer():305}()
+#8 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php(305): Illuminate\\Support\\Collection->each()
+#9 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php(287): Illuminate\\Foundation\\Console\\ServeCommand->flushOutputBuffer()
+#10 /mnt/data/final_work/property_finder_final/vendor/symfony/process/Process.php(1311): Illuminate\\Foundation\\Console\\ServeCommand->{closure:Illuminate\\Foundation\\Console\\ServeCommand::handleProcessOutput():284}()
+#11 /mnt/data/final_work/property_finder_final/vendor/symfony/process/Process.php(1411): Symfony\\Component\\Process\\Process->{closure:Symfony\\Component\\Process\\Process::buildCallback():1304}()
+#12 /mnt/data/final_work/property_finder_final/vendor/symfony/process/Process.php(1331): Symfony\\Component\\Process\\Process->readPipes()
+#13 /mnt/data/final_work/property_finder_final/vendor/symfony/process/Process.php(865): Symfony\\Component\\Process\\Process->updateStatus()
+#14 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php(131): Symfony\\Component\\Process\\Process->isRunning()
+#15 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\ServeCommand->handle()
+#16 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#17 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate\\Container\\BoundMethod::call()
+#20 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
+#21 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Command/Command.php(318): Illuminate\\Console\\Command->execute()
+#22 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
+#23 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(1073): Illuminate\\Console\\Command->run()
+#24 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+#25 /mnt/data/final_work/property_finder_final/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+#26 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+#27 /mnt/data/final_work/property_finder_final/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
+#28 /mnt/data/final_work/property_finder_final/artisan(13): Illuminate\\Foundation\\Application->handleCommand()
+#29 {main}
+"} 
+[2026-07-17 12:20:24] local.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.7] with payload:
+{
+    "message": {
+        "id": 6,
+        "sender_id": 8,
+        "receiver_id": 7,
+        "property_id": 62,
+        "content": "xxx",
+        "created_at": "2026-07-17T12:20:22.000000Z",
+        "sender": {
+            "id": 8,
+            "name": "tt"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:20:24] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.7] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 6,
+        "sender_id": 8,
+        "sender_name": "tt",
+        "property_id": 62,
+        "property_type": "\u0634\u0642\u0629",
+        "property_location": ".,",
+        "content": "xxx",
+        "created_at": "2026-07-17T12:20:22.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:20:30] local.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.8] with payload:
+{
+    "message": {
+        "id": 7,
+        "sender_id": 7,
+        "receiver_id": 8,
+        "property_id": 62,
+        "content": "cc",
+        "created_at": "2026-07-17T12:20:30.000000Z",
+        "sender": {
+            "id": 7,
+            "name": "mm"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:20:30] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.8] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 7,
+        "sender_id": 7,
+        "sender_name": "mm",
+        "property_id": 62,
+        "property_type": "\u0634\u0642\u0629",
+        "property_location": ".,",
+        "content": "cc",
+        "created_at": "2026-07-17T12:20:30.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.1] with payload:
+{
+    "message": {
+        "id": 1,
+        "sender_id": 2,
+        "receiver_id": 1,
+        "property_id": 1,
+        "content": "\u0647\u0644 \u0627\u0644\u0639\u0642\u0627\u0631 \u0645\u062a\u0627\u062d\u061f",
+        "created_at": "2026-07-17T12:23:16.000000Z",
+        "sender": {
+            "id": 2,
+            "name": "Caden Cremin"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.1] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 1,
+        "sender_id": 2,
+        "sender_name": "Caden Cremin",
+        "property_id": 1,
+        "property_type": "\u0628\u064a\u062a",
+        "property_location": "\u062f\u0645\u0634\u0642",
+        "content": "\u0647\u0644 \u0627\u0644\u0639\u0642\u0627\u0631 \u0645\u062a\u0627\u062d\u061f",
+        "created_at": "2026-07-17T12:23:16.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.2] with payload:
+{
+    "message": {
+        "id": 2,
+        "sender_id": 1,
+        "receiver_id": 2,
+        "property_id": 1,
+        "content": "\u0646\u0639\u0645\u060c \u0645\u0627 \u0632\u0627\u0644 \u0645\u062a\u0627\u062d\u064b\u0627.",
+        "created_at": "2026-07-17T12:23:16.000000Z",
+        "sender": {
+            "id": 1,
+            "name": "Idella Cartwright"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.2] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 2,
+        "sender_id": 1,
+        "sender_name": "Idella Cartwright",
+        "property_id": 1,
+        "property_type": "\u0628\u064a\u062a",
+        "property_location": "\u062f\u0645\u0634\u0642",
+        "content": "\u0646\u0639\u0645\u060c \u0645\u0627 \u0632\u0627\u0644 \u0645\u062a\u0627\u062d\u064b\u0627.",
+        "created_at": "2026-07-17T12:23:16.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.1] with payload:
+{
+    "message": {
+        "id": 1,
+        "sender_id": 2,
+        "receiver_id": 1,
+        "property_id": 1,
+        "content": "\u0631\u0633\u0627\u0644\u0629 \u0644\u0644\u0639\u0642\u0627\u0631 1",
+        "created_at": "2026-07-17T12:23:16.000000Z",
+        "sender": {
+            "id": 2,
+            "name": "Kennedy Huels"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.1] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 1,
+        "sender_id": 2,
+        "sender_name": "Kennedy Huels",
+        "property_id": 1,
+        "property_type": "\u0628\u064a\u062a",
+        "property_location": "\u062f\u0645\u0634\u0642",
+        "content": "\u0631\u0633\u0627\u0644\u0629 \u0644\u0644\u0639\u0642\u0627\u0631 1",
+        "created_at": "2026-07-17T12:23:16.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.1] with payload:
+{
+    "message": {
+        "id": 2,
+        "sender_id": 2,
+        "receiver_id": 1,
+        "property_id": 2,
+        "content": "\u0631\u0633\u0627\u0644\u0629 \u0644\u0644\u0639\u0642\u0627\u0631 2",
+        "created_at": "2026-07-17T12:23:16.000000Z",
+        "sender": {
+            "id": 2,
+            "name": "Kennedy Huels"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:23:16] testing.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.1] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 2,
+        "sender_id": 2,
+        "sender_name": "Kennedy Huels",
+        "property_id": 2,
+        "property_type": "\u0634\u0642\u0629",
+        "property_location": "\u062f\u0645\u0634\u0642",
+        "content": "\u0631\u0633\u0627\u0644\u0629 \u0644\u0644\u0639\u0642\u0627\u0631 2",
+        "created_at": "2026-07-17T12:23:16.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:53:25] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.6] with payload:
+{
+    "notification": {
+        "title": "\u062a\u0645\u062a \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0639\u0644\u0649 \u0627\u0644\u0639\u0642\u0627\u0631",
+        "message": "\u062a\u0645\u062a \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0639\u0644\u0649 \u0627\u0644\u0639\u0642\u0627\u0631 \u0631\u0642\u0645 61 \u0648\u0623\u0635\u0628\u062d \u0638\u0627\u0647\u0631\u064b\u0627 \u0644\u0644\u0645\u0633\u062a\u062e\u062f\u0645\u064a\u0646.",
+        "property_id": 61,
+        "status": "approved",
+        "reason": null
+    },
+    "socket": null
+}  
+[2026-07-17 12:53:35] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.9] with payload:
+{
+    "notification": {
+        "title": "\u062a\u0645\u062a \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0639\u0644\u0649 \u0627\u0644\u0639\u0642\u0627\u0631",
+        "message": "\u062a\u0645\u062a \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0639\u0644\u0649 \u0627\u0644\u0639\u0642\u0627\u0631 \u0631\u0642\u0645 64 \u0648\u0623\u0635\u0628\u062d \u0638\u0627\u0647\u0631\u064b\u0627 \u0644\u0644\u0645\u0633\u062a\u062e\u062f\u0645\u064a\u0646.",
+        "property_id": 64,
+        "status": "approved",
+        "reason": null
+    },
+    "socket": null
+}  
+[2026-07-17 12:53:35] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.10] with payload:
+{
+    "notification": {
+        "type": "property_match",
+        "title": "\u062a\u0645\u062a \u0625\u0636\u0627\u0641\u0629 \u0639\u0642\u0627\u0631 \u062c\u062f\u064a\u062f \u064a\u0646\u0627\u0633\u0628 \u0628\u062d\u062b\u0643",
+        "property_id": 64,
+        "location": "\u062f\u0645\u0634\u0642 - \u0627\u0644\u0645\u0632\u0629",
+        "price": 150000
+    },
+    "socket": null
+}  
+[2026-07-17 12:55:16] local.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.9] with payload:
+{
+    "message": {
+        "id": 8,
+        "sender_id": 10,
+        "receiver_id": 9,
+        "property_id": 64,
+        "content": "\u0645\u0631\u062d\u0628\u064b\u0627\u060c \u0623\u0631\u064a\u062f \u0627\u0644\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0646 \u0647\u0630\u0627 \u0627\u0644\u0639\u0642\u0627\u0631.",
+        "created_at": "2026-07-17T12:55:16.000000Z",
+        "sender": {
+            "id": 10,
+            "name": "\u0645\u0633\u062a\u062e\u062f\u0645 \u0645\u0647\u062a\u0645"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:55:16] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.9] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 8,
+        "sender_id": 10,
+        "sender_name": "\u0645\u0633\u062a\u062e\u062f\u0645 \u0645\u0647\u062a\u0645",
+        "property_id": 64,
+        "property_type": "\u0628\u064a\u062a",
+        "property_location": "\u062f\u0645\u0634\u0642 - \u0627\u0644\u0645\u0632\u0629",
+        "content": "\u0645\u0631\u062d\u0628\u064b\u0627\u060c \u0623\u0631\u064a\u062f \u0627\u0644\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0646 \u0647\u0630\u0627 \u0627\u0644\u0639\u0642\u0627\u0631.",
+        "created_at": "2026-07-17T12:55:16.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:57:52] local.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.9] with payload:
+{
+    "message": {
+        "id": 9,
+        "sender_id": 10,
+        "receiver_id": 9,
+        "property_id": 64,
+        "content": "\u0645\u0631\u062d\u0628\u064b\u0627\u060c \u0623\u0631\u064a\u062f \u0627\u0644\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0646 \u0647\u0630\u0627 \u0627\u0644\u0639\u0642\u0627\u0631.",
+        "created_at": "2026-07-17T12:57:52.000000Z",
+        "sender": {
+            "id": 10,
+            "name": "\u0645\u0633\u062a\u062e\u062f\u0645 \u0645\u0647\u062a\u0645"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:57:52] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.9] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 9,
+        "sender_id": 10,
+        "sender_name": "\u0645\u0633\u062a\u062e\u062f\u0645 \u0645\u0647\u062a\u0645",
+        "property_id": 64,
+        "property_type": "\u0628\u064a\u062a",
+        "property_location": "\u062f\u0645\u0634\u0642 - \u0627\u0644\u0645\u0632\u0629",
+        "content": "\u0645\u0631\u062d\u0628\u064b\u0627\u060c \u0623\u0631\u064a\u062f \u0627\u0644\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0646 \u0647\u0630\u0627 \u0627\u0644\u0639\u0642\u0627\u0631.",
+        "created_at": "2026-07-17T12:57:52.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:59:00] local.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.10] with payload:
+{
+    "message": {
+        "id": 10,
+        "sender_id": 9,
+        "receiver_id": 10,
+        "property_id": 64,
+        "content": "\u0623\u0647\u0644\u064b\u0627\u060c \u0627\u0644\u0639\u0642\u0627\u0631 \u0645\u0627 \u0632\u0627\u0644 \u0645\u062a\u0627\u062d\u064b\u0627.",
+        "created_at": "2026-07-17T12:59:00.000000Z",
+        "sender": {
+            "id": 9,
+            "name": "\u0645\u0627\u0644\u0643 \u0627\u0644\u0639\u0642\u0627\u0631"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:59:00] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.10] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 10,
+        "sender_id": 9,
+        "sender_name": "\u0645\u0627\u0644\u0643 \u0627\u0644\u0639\u0642\u0627\u0631",
+        "property_id": 64,
+        "property_type": "\u0628\u064a\u062a",
+        "property_location": "\u062f\u0645\u0634\u0642 - \u0627\u0644\u0645\u0632\u0629",
+        "content": "\u0623\u0647\u0644\u064b\u0627\u060c \u0627\u0644\u0639\u0642\u0627\u0631 \u0645\u0627 \u0632\u0627\u0644 \u0645\u062a\u0627\u062d\u064b\u0627.",
+        "created_at": "2026-07-17T12:59:00.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 12:59:19] local.INFO: Broadcasting [message.sent] on channels [private-App.Models.User.9] with payload:
+{
+    "message": {
+        "id": 11,
+        "sender_id": 10,
+        "receiver_id": 9,
+        "property_id": 64,
+        "content": "\u0634\u0643\u0631\u064b\u0627\u060c \u0623\u0631\u064a\u062f \u0645\u0639\u0631\u0641\u0629 \u0645\u0648\u0639\u062f \u0645\u0646\u0627\u0633\u0628 \u0644\u0644\u0645\u0639\u0627\u064a\u0646\u0629.",
+        "created_at": "2026-07-17T12:59:19.000000Z",
+        "sender": {
+            "id": 10,
+            "name": "\u0645\u0633\u062a\u062e\u062f\u0645 \u0645\u0647\u062a\u0645"
+        }
+    },
+    "socket": null
+}  
+[2026-07-17 12:59:19] local.INFO: Broadcasting [notification.created] on channels [private-App.Models.User.9] with payload:
+{
+    "notification": {
+        "type": "message",
+        "title": "\u0631\u0633\u0627\u0644\u0629 \u062c\u062f\u064a\u062f\u0629 \u062d\u0648\u0644 \u0639\u0642\u0627\u0631",
+        "message_id": 11,
+        "sender_id": 10,
+        "sender_name": "\u0645\u0633\u062a\u062e\u062f\u0645 \u0645\u0647\u062a\u0645",
+        "property_id": 64,
+        "property_type": "\u0628\u064a\u062a",
+        "property_location": "\u062f\u0645\u0634\u0642 - \u0627\u0644\u0645\u0632\u0629",
+        "content": "\u0634\u0643\u0631\u064b\u0627\u060c \u0623\u0631\u064a\u062f \u0645\u0639\u0631\u0641\u0629 \u0645\u0648\u0639\u062f \u0645\u0646\u0627\u0633\u0628 \u0644\u0644\u0645\u0639\u0627\u064a\u0646\u0629.",
+        "created_at": "2026-07-17T12:59:19.000000Z"
+    },
+    "socket": null
+}  
+[2026-07-17 13:10:51] local.ERROR: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'price_max' at row 1 (Connection: mysql, SQL: insert into `searches` (`user_id`, `type`, `location`, `price_max`, `price_min`, `area_max`, `area_min`, `updated_at`, `created_at`) values (8, بيت, دمشق - المزة, 10000000000, 4, 4333333333333, 4, 2026-07-17 13:10:51, 2026-07-17 13:10:51)) {"userId":8,"exception":"[object] (Illuminate\\Database\\QueryException(code: 22003): SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'price_max' at row 1 (Connection: mysql, SQL: insert into `searches` (`user_id`, `type`, `location`, `price_max`, `price_min`, `area_max`, `area_min`, `updated_at`, `created_at`) values (8, بيت, دمشق - المزة, 10000000000, 4, 4333333333333, 4, 2026-07-17 13:10:51, 2026-07-17 13:10:51)) at C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:825)
+[stacktrace]
+#0 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(779): Illuminate\\Database\\Connection->runQueryCallback('insert into `se...', Array, Object(Closure))
+#1 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php(42): Illuminate\\Database\\Connection->run('insert into `se...', Array, Object(Closure))
+#2 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert('insert into `se...', Array, 'id')
+#3 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3766): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `se...', Array, 'id')
+#4 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#5 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1359): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#6 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1324): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#7 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1163): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#8 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1128): Illuminate\\Database\\Eloquent\\Model->save()
+#9 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(399): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Models\\Search))
+#10 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1127): tap(Object(App\\Models\\Search), Object(Closure))
+#11 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#12 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2372): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#13 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2384): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#14 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\app\\Http\\Controllers\\SearchController.php(61): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#15 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(47): App\\Http\\Controllers\\SearchController->search(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(266): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\SearchController), 'search')
+#17 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(212): Illuminate\\Routing\\Route->runController()
+#18 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#19 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(64): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'sanctum')
+#24 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#26 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#28 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#49 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#51 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\Users\\\\\\xD9\\x86\\xD8\\xBA\\xD9\\x85...')
+#53 {main}
+
+[previous exception] [object] (PDOException(code: 22003): SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'price_max' at row 1 at C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php:53)
+[stacktrace]
+#0 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php(53): PDOStatement->execute()
+#1 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(812): Illuminate\\Database\\MySqlConnection->Illuminate\\Database\\{closure}('insert into `se...', Array)
+#2 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(779): Illuminate\\Database\\Connection->runQueryCallback('insert into `se...', Array, Object(Closure))
+#3 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php(42): Illuminate\\Database\\Connection->run('insert into `se...', Array, Object(Closure))
+#4 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert('insert into `se...', Array, 'id')
+#5 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3766): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `se...', Array, 'id')
+#6 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#7 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1359): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#8 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1324): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#9 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1163): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#10 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1128): Illuminate\\Database\\Eloquent\\Model->save()
+#11 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(399): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Models\\Search))
+#12 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1127): tap(Object(App\\Models\\Search), Object(Closure))
+#13 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#14 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2372): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#15 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2384): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#16 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\app\\Http\\Controllers\\SearchController.php(61): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#17 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(47): App\\Http\\Controllers\\SearchController->search(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(266): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\SearchController), 'search')
+#19 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(212): Illuminate\\Routing\\Route->runController()
+#20 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#21 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(64): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'sanctum')
+#26 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#51 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#53 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\Users\\\\\\xD9\\x86\\xD8\\xBA\\xD9\\x85...')
+#55 {main}
+"} 
+[2026-07-17 13:10:56] local.ERROR: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'price_max' at row 1 (Connection: mysql, SQL: insert into `searches` (`user_id`, `type`, `location`, `price_max`, `price_min`, `area_max`, `area_min`, `updated_at`, `created_at`) values (8, بيت, دمشق - المزة, 10000000000, 4, 433333333, 4, 2026-07-17 13:10:56, 2026-07-17 13:10:56)) {"userId":8,"exception":"[object] (Illuminate\\Database\\QueryException(code: 22003): SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'price_max' at row 1 (Connection: mysql, SQL: insert into `searches` (`user_id`, `type`, `location`, `price_max`, `price_min`, `area_max`, `area_min`, `updated_at`, `created_at`) values (8, بيت, دمشق - المزة, 10000000000, 4, 433333333, 4, 2026-07-17 13:10:56, 2026-07-17 13:10:56)) at C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:825)
+[stacktrace]
+#0 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(779): Illuminate\\Database\\Connection->runQueryCallback('insert into `se...', Array, Object(Closure))
+#1 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php(42): Illuminate\\Database\\Connection->run('insert into `se...', Array, Object(Closure))
+#2 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert('insert into `se...', Array, 'id')
+#3 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3766): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `se...', Array, 'id')
+#4 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#5 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1359): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#6 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1324): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#7 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1163): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#8 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1128): Illuminate\\Database\\Eloquent\\Model->save()
+#9 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(399): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Models\\Search))
+#10 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1127): tap(Object(App\\Models\\Search), Object(Closure))
+#11 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#12 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2372): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#13 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2384): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#14 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\app\\Http\\Controllers\\SearchController.php(61): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#15 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(47): App\\Http\\Controllers\\SearchController->search(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(266): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\SearchController), 'search')
+#17 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(212): Illuminate\\Routing\\Route->runController()
+#18 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#19 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(64): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'sanctum')
+#24 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#26 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#28 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#49 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#51 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\Users\\\\\\xD9\\x86\\xD8\\xBA\\xD9\\x85...')
+#53 {main}
+
+[previous exception] [object] (PDOException(code: 22003): SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'price_max' at row 1 at C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php:53)
+[stacktrace]
+#0 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php(53): PDOStatement->execute()
+#1 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(812): Illuminate\\Database\\MySqlConnection->Illuminate\\Database\\{closure}('insert into `se...', Array)
+#2 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(779): Illuminate\\Database\\Connection->runQueryCallback('insert into `se...', Array, Object(Closure))
+#3 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\MySqlConnection.php(42): Illuminate\\Database\\Connection->run('insert into `se...', Array, Object(Closure))
+#4 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert('insert into `se...', Array, 'id')
+#5 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3766): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `se...', Array, 'id')
+#6 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#7 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1359): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#8 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1324): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#9 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1163): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#10 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1128): Illuminate\\Database\\Eloquent\\Model->save()
+#11 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(399): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Models\\Search))
+#12 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1127): tap(Object(App\\Models\\Search), Object(Closure))
+#13 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#14 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2372): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#15 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(2384): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#16 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\app\\Http\\Controllers\\SearchController.php(61): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#17 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(47): App\\Http\\Controllers\\SearchController->search(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(266): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\SearchController), 'search')
+#19 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(212): Illuminate\\Routing\\Route->runController()
+#20 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#21 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(64): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'sanctum')
+#26 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#51 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#53 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\نغم\\Downloads\\property-finder-user-web-api-final\\property-finder-user-web-api-final\\property_finder_final\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\Users\\\\\\xD9\\x86\\xD8\\xBA\\xD9\\x85...')
+#55 {main}
+"} 

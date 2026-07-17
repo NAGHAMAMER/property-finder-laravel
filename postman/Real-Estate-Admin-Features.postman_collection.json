@@ -1,0 +1,2027 @@
+{
+  "info": {
+    "_postman_id": "fdcc5f11-6067-4c9e-b824-90a1d6446a8f",
+    "name": "Real Estate Laravel - Admin Approval, Documents, Notifications, Ratings & Favorites",
+    "description": "مجموعة Postman لاختبار رفع الوثائق الخاصة، موافقة الأدمن، الإشعارات، التقييمات، ومفضلة المستخدم العادي. اتبع ترتيب المجلدات واقرأ README المرفق.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "00 - إنشاء المستخدمين وتسجيل الدخول",
+      "description": "ابدأ بهذا المجلد لإنشاء صاحب العقار ومستخدم آخر للتقييم.",
+      "item": [
+        {
+          "name": "1. تسجيل صاحب العقار",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/register",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "ينشئ مستخدمًا جديدًا ويحفظ owner_token و owner_id تلقائيًا. البريد يُنشأ تلقائيًا أول مرة.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"صاحب عقار Postman\",\n  \"email\": \"{{owner_email}}\",\n  \"password\": \"{{user_password}}\",\n  \"password_confirmation\": \"{{user_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (!pm.environment.get(\"owner_email\")) {",
+                  "    pm.environment.set(\"owner_email\", `owner_${Date.now()}@example.com`);",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم إنشاء حساب صاحب العقار\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "const data = pm.response.json();",
+                  "if (data.token) pm.environment.set(\"owner_token\", data.token);",
+                  "if (data.user && data.user.id) pm.environment.set(\"owner_id\", data.user.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2. تسجيل مستخدم للتقييم",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/register",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "ينشئ مستخدمًا ثانيًا لتجربة تقييم العقار ويحفظ rater_token و rater_id.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"مستخدم مقيّم Postman\",\n  \"email\": \"{{rater_email}}\",\n  \"password\": \"{{user_password}}\",\n  \"password_confirmation\": \"{{user_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (!pm.environment.get(\"rater_email\")) {",
+                  "    pm.environment.set(\"rater_email\", `rater_${Date.now()}@example.com`);",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم إنشاء حساب المستخدم المقيّم\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "const data = pm.response.json();",
+                  "if (data.token) pm.environment.set(\"rater_token\", data.token);",
+                  "if (data.user && data.user.id) pm.environment.set(\"rater_id\", data.user.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3. تسجيل دخول صاحب العقار مجددًا",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/login",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "استخدمه عند ضياع أو انتهاء owner_token.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{owner_email}}\",\n  \"password\": \"{{user_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تسجيل الدخول\", () => pm.response.to.have.status(200));",
+                  "const data = pm.response.json();",
+                  "if (data.token) pm.environment.set(\"owner_token\", data.token);",
+                  "if (data.user && data.user.id) pm.environment.set(\"owner_id\", data.user.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4. تسجيل دخول مستخدم التقييم مجددًا",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/login",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "استخدمه عند ضياع أو انتهاء rater_token.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{rater_email}}\",\n  \"password\": \"{{user_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تسجيل الدخول\", () => pm.response.to.have.status(200));",
+                  "const data = pm.response.json();",
+                  "if (data.token) pm.environment.set(\"rater_token\", data.token);",
+                  "if (data.user && data.user.id) pm.environment.set(\"rater_id\", data.user.id);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "01 - إرسال العقار والوثائق للمراجعة",
+      "description": "يشمل إنشاء العقار pending، حماية الوثائق، وإخفاء العقار قبل الموافقة.",
+      "item": [
+        {
+          "name": "1. إضافة عقار مع أوراق إثبات",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/add-property",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "مهم: من Body > form-data اختر ملف sample-files/proof-document.png للحقل documents[]. الطلب يحفظ property_id و document_id تلقائيًا. العقار يبدأ pending.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "شقة",
+                  "type": "text"
+                },
+                {
+                  "key": "location",
+                  "value": "دمشق - المزة",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "250000000",
+                  "type": "text"
+                },
+                {
+                  "key": "badroom",
+                  "value": "3",
+                  "type": "text"
+                },
+                {
+                  "key": "bathroom",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "area",
+                  "value": "150",
+                  "type": "text"
+                },
+                {
+                  "key": "status",
+                  "value": "متاح",
+                  "type": "text"
+                },
+                {
+                  "key": "documents[]",
+                  "description": "اختر sample-files/proof-document.png من الحزمة بعد استيراد Collection.",
+                  "type": "file",
+                  "src": ""
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم إرسال العقار للمراجعة\", () => pm.response.to.have.status(201));",
+                  "const data = pm.response.json();",
+                  "if (data.data && data.data.id) pm.environment.set(\"property_id\", data.data.id);",
+                  "if (data.data && data.data.documents && data.data.documents.length) {",
+                  "    pm.environment.set(\"document_id\", data.data.documents[0].id);",
+                  "}",
+                  "pm.test(\"حالة العقار pending\", function () {",
+                  "    pm.expect(data.data.approval_status).to.eql(\"pending\");",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2. عرض عقارات صاحب الحساب",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/show_My_Property/{{owner_id}}",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعرض عقارات المالك بكل الحالات، ويشمل معلومات الوثائق الخاصة لأنه صاحب العقار.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"الطلب ناجح\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "const id = Number(pm.environment.get(\"property_id\"));",
+                  "const property = (json.data || []).find(p => Number(p.id) === id);",
+                  "pm.test(\"العقار موجود ضمن عقارات المالك\", () => pm.expect(property).to.exist);",
+                  "if (property && property.documents && property.documents.length) {",
+                  "    pm.environment.set(\"document_id\", property.documents[0].id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3. عرض العقار pending بصفته المالك",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/show_Property/{{property_id}}",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "المالك يستطيع مشاهدة عقاره حتى قبل الموافقة، وتظهر له وثائقه.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"المالك يستطيع مشاهدة العقار\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test(\"الوثائق ظاهرة للمالك\", () => pm.expect(json.data.documents).to.be.an(\"array\").that.is.not.empty);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4. تنزيل وثيقة خاصة بصفته المالك",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/documents/{{document_id}}/download",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعيد الملف نفسه. مسموح لصاحب العقار أو الأدمن فقط.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تنزيل الوثيقة\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "5. محاولة مستخدم آخر تنزيل الوثيقة - يجب 403",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/documents/{{document_id}}/download",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "اختبار الخصوصية: مستخدم التقييم ليس مالك العقار ولا أدمن.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"الوصول مرفوض\", () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "6. التحقق أن pending مخفي من القائمة العامة",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/all_property",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يجب ألا يظهر العقار قبل قبول الأدمن.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"الطلب ناجح\", () => pm.response.to.have.status(200));",
+                  "const list = pm.response.json().data || [];",
+                  "const id = Number(pm.environment.get(\"property_id\"));",
+                  "pm.test(\"العقار pending غير ظاهر\", () => pm.expect(list.some(p => Number(p.id) === id)).to.eql(false));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "7. محاولة تقييم pending - يجب 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/ratings",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "شغّل هذا الطلب قبل موافقة الأدمن لإثبات منع تقييم العقار غير المعتمد.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"comment\": \"محاولة تقييم قبل الاعتماد\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"لا يمكن تقييم pending\", () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "8. محاولة إضافة عقار pending للمفضلة - يجب 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/favorite",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "المستخدم العادي لا يستطيع حفظ عقار غير معتمد في المفضلة.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم منع إضافة العقار pending للمفضلة\", () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "9. رفع صور العقار",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/show_My_Property/show_Property/{{property_id}}/add_property_images",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "اختياري: اختر sample-files/property-image.png للحقل images[].",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "images[]",
+                  "description": "اختر sample-files/property-image.png",
+                  "type": "file",
+                  "src": ""
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم رفع الصورة\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "if (json.data && json.data.length) pm.environment.set(\"image_id\", json.data[json.data.length - 1].id);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "02 - لوحة الأدمن Blade: دخول ومراجعة وقبول ورفض",
+      "description": "نفّذ الطلبات 1 ثم 2 ثم 3 قبل أي عملية أدمن. Postman يحفظ جلسة Laravel في Cookie Jar.",
+      "item": [
+        {
+          "name": "1. جلب صفحة دخول الأدمن و CSRF",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/login",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يحفظ csrf_token من صفحة Blade. Postman يحتفظ أيضًا بكوكي الجلسة تلقائيًا."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"صفحة الدخول متاحة\", function () {",
+                  "    pm.expect([200, 302]).to.include(pm.response.code);",
+                  "});",
+                  "if (pm.response.code === 200) {",
+                  "    const html = pm.response.text();",
+                  "    const match = html.match(/name=[\"']_token[\"'][^>]*value=[\"']([^\"']+)[\"']/i) || html.match(/value=[\"']([^\"']+)[\"'][^>]*name=[\"']_token[\"']/i);",
+                  "    pm.test(\"تم العثور على CSRF\", () => pm.expect(match).to.not.eql(null));",
+                  "    if (match) pm.environment.set(\"csrf_token\", match[1]);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          }
+        },
+        {
+          "name": "2. تسجيل دخول الأدمن عبر Blade Session",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/login",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يستخدم CSRF والجلسة بدل Bearer Token. لا تعطل Cookie Jar في Postman.",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "_token",
+                  "value": "{{csrf_token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "{{admin_email}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{admin_password}}",
+                  "type": "text"
+                },
+                {
+                  "key": "remember",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم قبول بيانات دخول الأدمن\", () => pm.expect([302, 303]).to.include(pm.response.code));",
+                  "const location = pm.response.headers.get(\"Location\") || \"\";",
+                  "pm.test(\"تم التحويل إلى لوحة الأدمن\", () => pm.expect(location).to.include(\"/admin\"));"
+                ]
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          }
+        },
+        {
+          "name": "3. فتح لوحة الأدمن وعرض كل العقارات",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin?approval_status=pending",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعرض Blade Dashboard للعقارات pending. يجدد csrf_token من الصفحة."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"لوحة الأدمن متاحة\", () => pm.response.to.have.status(200));",
+                  "const html = pm.response.text();",
+                  "pm.test(\"ليست صفحة دخول\", () => pm.expect(html).to.include(\"لوحة التحكم\"));",
+                  "const match = html.match(/name=[\"']_token[\"'][^>]*value=[\"']([^\"']+)[\"']/i) || html.match(/value=[\"']([^\"']+)[\"'][^>]*name=[\"']_token[\"']/i);",
+                  "if (match) pm.environment.set(\"csrf_token\", match[1]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4. فتح صفحة مراجعة العقار والوثائق",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/properties/{{property_id}}",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعرض تفاصيل العقار والوثائق الخاصة والتقييمات داخل Blade."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"صفحة العقار متاحة للأدمن\", () => pm.response.to.have.status(200));",
+                  "const html = pm.response.text();",
+                  "pm.test(\"قسم الوثائق موجود\", () => pm.expect(html).to.include(\"أوراق الإثبات الخاصة\"));",
+                  "const match = html.match(/name=[\"']_token[\"'][^>]*value=[\"']([^\"']+)[\"']/i) || html.match(/value=[\"']([^\"']+)[\"'][^>]*name=[\"']_token[\"']/i);",
+                  "if (match) pm.environment.set(\"csrf_token\", match[1]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "5. تنزيل الوثيقة بصفته الأدمن",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/documents/{{document_id}}/download",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يستخدم جلسة الأدمن المخزنة في Cookie Jar."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تنزيل الوثيقة للأدمن\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "6. الموافقة على العقار وإشعار المالك",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/properties/{{property_id}}/approve",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يغير approval_status إلى approved ويرسل إشعار قاعدة بيانات لصاحب العقار.",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "_token",
+                  "value": "{{csrf_token}}",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تمت الموافقة\", () => pm.expect([302, 303]).to.include(pm.response.code));"
+                ]
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          }
+        },
+        {
+          "name": "7. رفض العقار مع السبب - اختياري بعد اختبار القبول والتقييم",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/properties/{{property_id}}/reject",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "شغّله لاحقًا لاختبار الرفض والإشعار. يمكن إعادة الموافقة على العقار بعده.",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "_token",
+                  "value": "{{csrf_token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "rejection_reason",
+                  "value": "{{rejection_reason}}",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم رفض العقار\", () => pm.expect([302, 303]).to.include(pm.response.code));"
+                ]
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          }
+        },
+        {
+          "name": "8. حذف العقار نهائيًا - اختياري وآخر خطوة",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/properties/{{property_id}}",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "تنبيه: يحذف العقار والوثائق والصور والتقييمات. شغّله أخيرًا فقط.",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "_token",
+                  "value": "{{csrf_token}}",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم طلب الحذف\", () => pm.expect([302, 303]).to.include(pm.response.code));"
+                ]
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          }
+        },
+        {
+          "name": "9. تسجيل خروج الأدمن",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/admin/logout",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "ينهي جلسة Blade. بعده يلزم جلب صفحة الدخول وCSRF مجددًا.",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "_token",
+                  "value": "{{csrf_token}}",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تسجيل الخروج\", () => pm.expect([302, 303]).to.include(pm.response.code));"
+                ]
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - التحقق من الموافقة والإشعارات",
+      "description": "شغّله بعد قبول العقار، ويمكن إعادة طلب الإشعارات بعد الرفض أيضًا.",
+      "item": [
+        {
+          "name": "1. التأكد أن العقار أصبح ظاهرًا بعد الموافقة",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/all_property",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "شغّله بعد طلب موافقة الأدمن.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"الطلب ناجح\", () => pm.response.to.have.status(200));",
+                  "const list = pm.response.json().data || [];",
+                  "const id = Number(pm.environment.get(\"property_id\"));",
+                  "pm.test(\"العقار approved ظاهر\", () => pm.expect(list.some(p => Number(p.id) === id && p.approval_status === \"approved\")).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2. إشعارات صاحب العقار بعد القبول أو الرفض",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/all_notifications",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعرض إشعارات المالك ويعلّمها كمقروءة. ابحث في data عن status=approved أو status=rejected.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم جلب الإشعارات\", () => pm.response.to.have.status(200));",
+                  "const data = pm.response.json().data || [];",
+                  "const propertyId = Number(pm.environment.get(\"property_id\"));",
+                  "const related = data.filter(n => n.data && Number(n.data.property_id) === propertyId);",
+                  "pm.test(\"يوجد إشعار متعلق بالعقار\", () => pm.expect(related.length).to.be.above(0));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3. دخول الأدمن عبر API للحصول على Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/login",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "اختياري لتجربة إشعارات الأدمن عبر API. هذا منفصل عن جلسة Blade.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{admin_email}}\",\n  \"password\": \"{{admin_password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم دخول الأدمن عبر API\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "if (json.token) pm.environment.set(\"admin_token\", json.token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4. إشعارات الأدمن عن طلبات العقارات",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/all_notifications",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعرض إشعار طلب إضافة العقار المرسل إلى حساب الأدمن.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم جلب إشعارات الأدمن\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "04 - تقييم العقار",
+      "description": "شغّل هذا المجلد بعد قبول العقار وقبل رفضه أو حذفه.",
+      "item": [
+        {
+          "name": "1. إضافة تقييم من مستخدم آخر",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/ratings",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يجب أن يكون العقار approved وألا يكون المقيّم هو صاحب العقار.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"comment\": \"عقار ممتاز وموقعه مناسب\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تمت إضافة أو تحديث التقييم\", () => pm.expect([200, 201]).to.include(pm.response.code));",
+                  "const json = pm.response.json();",
+                  "if (json.data && json.data.id) pm.environment.set(\"rating_id\", json.data.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2. عرض تقييمات العقار والمتوسط",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/ratings",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعرض average_rating و ratings_count وقائمة التقييمات.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم عرض التقييمات\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test(\"عدد التقييمات أكبر من صفر\", () => pm.expect(json.ratings_count).to.be.above(0));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3. تعديل التقييم نفسه",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/ratings",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "نفس المستخدم لا ينشئ تقييمًا ثانيًا؛ يتم تحديث تقييمه الحالي.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 4,\n  \"comment\": \"تقييم معدل من Postman\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تحديث التقييم\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"الرسالة تؤكد التحديث\", () => pm.expect(pm.response.json().message).to.include(\"تحديث\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4. محاولة صاحب العقار تقييم عقاره - يجب 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/ratings",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "اختبار منع صاحب العقار من تقييم عقاره.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"comment\": \"تقييم المالك لعقاره\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"منع تقييم المالك لعقاره\", () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "5. حذف تقييم المستخدم الحالي",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/ratings",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يحذف تقييم rater_token فقط.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم حذف التقييم\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "05 - مفضلة المستخدم العادي",
+      "description": "يجب تشغيل هذه الطلبات بعد موافقة الأدمن على العقار. تستخدم حساب المستخدم المقيّم كمستخدم عادي.",
+      "item": [
+        {
+          "name": "1. إضافة العقار إلى المفضلة",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/favorite",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يضيف العقار المعتمد إلى مفضلة المستخدم الحالي. يمنع التكرار بواسطة قيد فريد.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تمت إضافة العقار إلى المفضلة\", () => pm.expect([200, 201]).to.include(pm.response.code));",
+                  "const json = pm.response.json();",
+                  "pm.test(\"is_favorite يساوي true\", () => pm.expect(json.data.is_favorite).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2. إعادة إضافة العقار نفسه - بدون تكرار",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/favorite",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعيد 200 لأن العقار موجود مسبقًا، ولا ينشئ سجلًا ثانيًا.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"لم يتم تكرار المفضلة\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3. عرض قائمة المفضلة",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/favorites",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يعرض العقارات المعتمدة المحفوظة للمستخدم الحالي بترتيب الأحدث إضافة.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم جلب المفضلة\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test(\"العقار موجود مرة واحدة\", function () {",
+                  "  const matches = json.data.filter(p => String(p.id) === String(pm.environment.get(\"property_id\")));",
+                  "  pm.expect(matches.length).to.eql(1);",
+                  "  pm.expect(matches[0].is_favorite).to.eql(true);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4. عرض تفاصيل العقار والتحقق من is_favorite",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/show_Property/{{property_id}}",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "تفاصيل العقار والقوائم العامة والبحث تعيد is_favorite حسب المستخدم صاحب التوكن.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تفاصيل العقار تظهر أنه مفضل\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test(\"is_favorite=true\", () => pm.expect(json.data.is_favorite).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "5. إزالة العقار من المفضلة",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/properties/{{property_id}}/favorite",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يزيل ارتباط العقار بمفضلة المستخدم الحالي فقط.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تمت إزالة العقار\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test(\"is_favorite=false\", () => pm.expect(json.is_favorite).to.eql(false));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "6. التحقق أن العقار لم يعد في المفضلة",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/favorites",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يتأكد أن العقار المحذوف لم يعد ظاهرًا في قائمة المفضلة.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم جلب القائمة بعد الحذف\", () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test(\"العقار غير موجود\", function () {",
+                  "  const found = json.data.some(p => String(p.id) === String(pm.environment.get(\"property_id\")));",
+                  "  pm.expect(found).to.eql(false);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "06 - اختبارات اختيارية وتنظيف",
+      "description": "استخدمها في نهاية التجربة فقط.",
+      "item": [
+        {
+          "name": "1. تعديل العقار وإعادته إلى pending",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/show_My_Property/show_Property/edit_property/{{property_id}}",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "اختياري: تعديل المالك يعيد العقار للمراجعة pending ويرسل إشعارًا للأدمن. الوثائق في التعديل اختيارية.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "شقة",
+                  "type": "text"
+                },
+                {
+                  "key": "location",
+                  "value": "دمشق - المزة - موقع محدث",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "260000000",
+                  "type": "text"
+                },
+                {
+                  "key": "badroom",
+                  "value": "3",
+                  "type": "text"
+                },
+                {
+                  "key": "bathroom",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "area",
+                  "value": "155",
+                  "type": "text"
+                },
+                {
+                  "key": "status",
+                  "value": "متاح",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تعديل العقار\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"عاد إلى pending\", () => pm.expect(pm.response.json().data.approval_status).to.eql(\"pending\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2. تسجيل خروج صاحب العقار API",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/logout",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يحذف التوكن الحالي فقط.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{owner_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تسجيل الخروج\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3. تسجيل خروج مستخدم التقييم API",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/logout",
+              "host": [
+                "{{base_url}}"
+              ]
+            },
+            "description": "يحذف rater_token الحالي.",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rater_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"تم تسجيل الخروج\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// يضمن عدم وجود / زائدة في نهاية base_url",
+          "const base = pm.environment.get(\"base_url\");",
+          "if (base) pm.environment.set(\"base_url\", base.replace(/\\/$/, \"\"));"
+        ]
+      }
+    }
+  ],
+  "variable": []
+}
