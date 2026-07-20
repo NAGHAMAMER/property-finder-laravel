@@ -32,11 +32,14 @@ class PropertyApprovalStatusChanged extends Notification
         $approved = $this->status === 'approved';
 
         return [
+            'notification_type' => 'property_approval',
             'title' => $approved ? 'تمت الموافقة على العقار' : 'تم رفض إضافة العقار',
             'message' => $approved
                 ? "تمت الموافقة على العقار رقم {$this->property->id} وأصبح ظاهرًا للمستخدمين."
                 : "تم رفض العقار رقم {$this->property->id}." . ($this->reason ? " السبب: {$this->reason}" : ''),
             'property_id' => $this->property->id,
+            'property_type' => $this->property->type,
+            'location' => $this->property->location,
             'status' => $this->status,
             'reason' => $this->reason,
         ];

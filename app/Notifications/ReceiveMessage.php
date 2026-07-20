@@ -21,6 +21,7 @@ class ReceiveMessage extends Notification
     public function toDatabase(object $notifiable): array
     {
         return [
+            'notification_type' => 'message',
             'title' => 'رسالة جديدة',
             'message_id' => $this->message->id,
             'sender_id' => $this->message->sender_id,
