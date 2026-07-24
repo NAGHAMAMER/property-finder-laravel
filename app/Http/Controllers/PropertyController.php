@@ -34,11 +34,12 @@ class PropertyController extends Controller
 
     public function add_property(Request $request)
     {
-        $validated = $request->validate($this->propertyRules(true));
-        $storedPaths = [];
+        $validated = $request->validate($this->propertyRules(true, true));
+        $storedDocuments = [];
+        $storedImages = [];
 
         try {
-            $property = DB::transaction(function () use ($request, $validated, &$storedPaths) {
+            $property = DB::transaction(function () use ($request, $validated, &$storedDocuments, &$storedImages) {
                 $property = Property::create([
                     'type' => $validated['type'],
                     'location' => $validated['location'],
@@ -53,13 +54,22 @@ class PropertyController extends Controller
 
                 foreach ($request->file('documents', []) as $file) {
                     $path = $file->store("property-documents/{$property->id}", 'local');
-                    $storedPaths[] = $path;
+                    $storedDocuments[] = $path;
 
                     $property->documents()->create([
                         'original_name' => $file->getClientOriginalName(),
                         'file_path' => $path,
                         'mime_type' => $file->getMimeType(),
                         'file_size' => $file->getSize(),
+                    ]);
+                }
+
+                foreach ($request->file('images', []) as $image) {
+                    $path = $image->store("properties/{$property->id}", 'public');
+                    $storedImages[] = $path;
+
+                    $property->images()->create([
+                        'image_path' => $path,
                     ]);
                 }
 
@@ -73,8 +83,12 @@ class PropertyController extends Controller
                 return $property;
             });
         } catch (Throwable $exception) {
-            foreach ($storedPaths as $path) {
+            foreach ($storedDocuments as $path) {
                 Storage::disk('local')->delete($path);
+            }
+
+            foreach ($storedImages as $path) {
+                Storage::disk('public')->delete($path);
             }
 
             throw $exception;
@@ -84,8 +98,8 @@ class PropertyController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'تم إرسال العقار والوثائق إلى الأدمن للمراجعة. لن يظهر العقار قبل الموافقة.',
-            'data' => $property->load(['documents', 'detailed_locations']),
+            'message' => 'تم إرسال العقار وصوره ووثائق الإثبات إلى الأدمن للمراجعة. لن يظهر العقار قبل الموافقة.',
+            'data' => $property->load(['images', 'documents', 'detailed_locations']),
         ], 201);
     }
 
@@ -154,6 +168,13 @@ class PropertyController extends Controller
             ]);
         }
 
+        foreach ($request->file('images', []) as $image) {
+            $path = $image->store("properties/{$property->id}", 'public');
+            $property->images()->create([
+                'image_path' => $path,
+            ]);
+        }
+
         if (! $request->user()->isAdmin()) {
             $this->notifyAdmins($property);
         }
@@ -163,7 +184,7 @@ class PropertyController extends Controller
             'message' => $request->user()->isAdmin()
                 ? 'تم تعديل العقار بنجاح.'
                 : 'تم تعديل العقار وإرساله مجددًا إلى الأدمن للموافقة.',
-            'data' => $property->fresh(),
+            'data' => $property->fresh()->load(['images', 'documents', 'detailed_locations']),
         ]);
     }
 
@@ -207,7 +228,7 @@ class PropertyController extends Controller
         ]);
 
         foreach ($request->file('images', []) as $image) {
-            $path = $image->store('properties', 'public');
+            $path = $image->store("properties/{$property->id}", 'public');
             $property->images()->create(['image_path' => $path]);
         }
 
@@ -279,7 +300,7 @@ class PropertyController extends Controller
         return Storage::disk('local')->download($document->file_path, $document->original_name);
     }
 
-    private function propertyRules(bool $documentsRequired): array
+    private function propertyRules(bool $documentsRequired, bool $imagesRequired = false): array
     {
         return [
             'type' => ['required', 'string', Rule::in(['بيت', 'محل', 'أرض', 'شقة', 'فيلا'])],
@@ -291,6 +312,8 @@ class PropertyController extends Controller
             'status' => ['required', 'string', Rule::in(['متاح', 'مؤجر', 'مباع'])],
             'documents' => $documentsRequired ? 'required|array|min:1|max:10' : 'sometimes|array|max:10',
             'documents.*' => 'file|mimes:pdf,jpg,jpeg,png,webp|max:10240',
+            'images' => $imagesRequired ? 'required|array|min:1|max:12' : 'sometimes|array|max:12',
+            'images.*' => 'image|mimes:jpg,jpeg,png,webp|max:4096',
             'latitude' => 'nullable|numeric|between:-90,90|required_with:longitude',
             'longitude' => 'nullable|numeric|between:-180,180|required_with:latitude',
         ];
